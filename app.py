@@ -16,4 +16,4 @@ def health():
 if __name__ == '__main__':
     # Run the application
     # Note: In production, use a proper WSGI server like Gunicorn
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8008)

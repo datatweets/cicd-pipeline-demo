@@ -53,7 +53,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-The application will be available at `http://localhost:5000`
+The application will be available at `http://localhost:8008`
 
 ### Testing the Endpoints
 
@@ -61,10 +61,10 @@ Try these URLs in your browser or using curl:
 
 ```bash
 # Test the greeting endpoint
-curl http://localhost:5000/hello/World
+curl http://localhost:8008/hello/World
 
 # Test the health check
-curl http://localhost:5000/health
+curl http://localhost:8008/health
 ```
 
 ## Running Tests
