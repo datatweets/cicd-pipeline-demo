@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+# Trigger: Run on pushes to main or pull requests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # CI Job: Build and Test
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Get the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      # Step 3: Install required packages
+      - name: Install dependencies
+        run: |
+          pip install flask pytest
+      
+      # Step 4: Run automated tests
+      - name: Run tests
+        run: |
+          pytest test_app.py -v
+  
+  # CD Job: Deploy to staging (only on main branch)
+  deploy_staging:
+    needs: test  # Only runs if tests pass
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to staging
+        run: |
+          echo "Deploying to staging environment..."
+          # In production: Use secure deployment methods
+          # - Store credentials in GitHub Secrets
+          # - Use SSH keys or deployment tokens
+          # - Never commit credentials to code
