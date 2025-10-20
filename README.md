@@ -615,7 +615,7 @@ kill -9 $(lsof -ti:8008)
 
 ### Getting Help
 
-1. Check the TUTORIAL.md for detailed explanations
+1. Check the CICD Pipeline Tutorial for detailed explanations
 2. Review GitHub Actions logs for error details
 3. Search error messages on Stack Overflow
 4. Check Flask and pytest documentation
@@ -701,17 +701,7 @@ Example:
    - Google Cloud Run
    - DigitalOcean App Platform
 
-### Learn More
 
-7. **Advanced Topics**
-   - Database integration
-   - Authentication and authorization
-   - API rate limiting
-   - Caching strategies
-   - Load balancing
-   - Monitoring and logging
-   - Blue-green deployments
-   - Canary deployments
 
 ### Resources
 
